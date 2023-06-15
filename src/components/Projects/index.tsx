@@ -1,4 +1,3 @@
-import React from 'react'
 import { SectionContent, SectionTitle } from '../../pages/Home/style';
 import { ContainerTags, Tag } from '../ProfessionalExperience/style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

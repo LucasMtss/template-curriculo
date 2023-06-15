@@ -1,5 +1,4 @@
-import React from 'react'
-import { SectionContent, SectionTitle } from '../../pages/Home/style';
+import { SectionTitle } from '../../pages/Home/style';
 
 interface IEducationProps {
     data: string[];
