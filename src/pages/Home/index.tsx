@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import personalStyle from "../../assets/styleData.json"
 import personalData from "../../assets/personalData.json";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
