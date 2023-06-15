@@ -1,0 +1,120 @@
+{
+  "nome": "Lucas Matos",
+  "profissao": "Software Engineer",
+  "imagem": "https://avatars.githubusercontent.com/u/54159333?v=4",
+  "idade": 22,
+  "endereco": {
+    "ciadade": "Baracena",
+    "estado": "MG"
+  },
+  "contatos": {
+    "linkedIn": "https://www.linkedin.com/in/lucas-matos-92b37a1b2/",
+    "github": "https://github.com/LucasMtss",
+    "whatsApp": "(32) 99186-4842",
+    "email": "lucasrmtsdev@gmail.com",
+    "instagram": "@lucas_mtss"
+  },
+  "idiomas": [
+    {
+      "lingua": "Português",
+      "nivel": "Nativo"
+    },
+    {
+      "lingua": "Inglês",
+      "nivel": "Básico"
+    }
+  ],
+  "bio": "Sou um engenheiro de software com paixão por entregar soluções de alta qualidade, escaláveis e amigáveis ao usuário. Proficiente em várias linguagens e frameworks, incluindo Javascript, React, Angular, Node, MongoDB e Python. Hábil em colaborar com equipes interfuncionais e utilizar metodologias ágeis para impulsionar o sucesso do projeto. Continuamente buscando oportunidades para aprimorar habilidades técnicas e ficar atualizado com as últimas tendências da indústria. Procurando novos desafios na área de engenharia de software para desenvolver ainda mais minha carreira.",
+  "experiencias": [
+    {
+      "empresa": "Smarti9 Communications",
+      "dataInicial": "03/2021",
+      "dataFinal": "09/2021",
+      "resumo": "Responsável pelo desenvolvimento de sites utilizando React, Next, HTML, CSS. Desenvolvi diversos sistemas completos utilizando React e Typescript, atuando em mais de um projeto por vez e utilizando metodologias ágeis, como Scrum e Kanban. Dei manutenção em aplicativos em React Native. Desenvolvi protótipos de design no Figma utilizando boas práticas de UX.",
+      "competencias": [
+        "React",
+        "Next",
+        "CSS",
+        "Typescript",
+        "React Native",
+        "Figma"
+      ]
+    },
+    {
+      "empresa": "Gyan",
+      "dataInicial": "09/2021",
+      "dataFinal": "06/2022",
+      "resumo": "Responsável pelo desenvolvimento e manutenção da plataforma da empresa, utilizando React, Next e Typescript. Trabalhei com integrações com meio de pagamentos.",
+      "competencias": ["React", "Next", "CSS", "Typescript"]
+    },
+    {
+      "empresa": "F3 Capital",
+      "dataInicial": "11/2021",
+      "dataFinal": "ataulmente",
+      "resumo": "Responsável por desenvolver e dar manutenção nas telas do front-end da aplicação utilizando Angular e Typescript. Trabalhei no desenvolvimento e manutenção de APIs Rest utilizando Node, Typescript e MongoDB.",
+      "competencias": ["Angular", "Typescript", "Node", "CSS", "MongoDB"]
+    }
+  ],
+  "escolaridade": [
+    {
+      "instituicao": "IFSEMG - Barbacena",
+      "dataInicial": "2019",
+      "dataFinal": "atualmente",
+      "resumo": "Curso: Tecnologia em Sistemas para Internet"
+    }
+  ], 
+  "projetos": [
+    {
+        "nome": "Plataforma de rifas",
+        "resumo": "Responsável pelo desenvolvimento de sites utilizando React, Next, HTML, CSS. Desenvolvi diversos sistemas completos utilizando React e Typescript, atuando em mais de um projeto por vez e utilizando metodologias ágeis, como Scrum e Kanban. Dei manutenção em aplicativos em React Native. Desenvolvi protótipos de design no Figma utilizando boas práticas de UX.",
+        "link": "",
+        "tecnologias": [
+          "React",
+          "Next",
+          "CSS",
+          "Typescript",
+          "React Native",
+          "Figma"
+        ]
+      },
+      {
+        "nome": "Template de currículo personalizável",
+        "resumo": "Responsável pelo desenvolvimento de sites utilizando React, Next, HTML, CSS. Desenvolvi diversos sistemas completos utilizando React e Typescript, atuando em mais de um projeto por vez e utilizando metodologias ágeis, como Scrum e Kanban. Dei manutenção em aplicativos em React Native. Desenvolvi protótipos de design no Figma utilizando boas práticas de UX.",
+        "link": "https://google.com",
+        "tecnologias": [
+          "React",
+          "Next",
+          "CSS",
+          "Typescript",
+          "React Native",
+          "Figma"
+        ]
+      },
+      {
+        "nome": "Currículo no estilo FIFA",
+        "resumo": "Responsável pelo desenvolvimento de sites utilizando React, Next, HTML, CSS. Desenvolvi diversos sistemas completos utilizando React e Typescript, atuando em mais de um projeto por vez e utilizando metodologias ágeis, como Scrum e Kanban. Dei manutenção em aplicativos em React Native. Desenvolvi protótipos de design no Figma utilizando boas práticas de UX.",
+        "link": "https://google.com",
+        "tecnologias": [
+          "React",
+          "Next",
+          "CSS",
+          "Typescript",
+          "React Native",
+          "Figma"
+        ]
+      },
+      {
+        "nome": "Sistemas de lembretes pelo WhatsApp",
+        "resumo": "Responsável pelo desenvolvimento de sites utilizando React, Next, HTML, CSS. Desenvolvi diversos sistemas completos utilizando React e Typescript, atuando em mais de um projeto por vez e utilizando metodologias ágeis, como Scrum e Kanban. Dei manutenção em aplicativos em React Native. Desenvolvi protótipos de design no Figma utilizando boas práticas de UX.",
+        "link": "https://google.com",
+        "tecnologias": [
+          "React",
+          "Next",
+          "CSS",
+          "Typescript",
+          "React Native",
+          "Figma"
+        ]
+      }
+  ]
+}
