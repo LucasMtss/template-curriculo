@@ -4,7 +4,7 @@
   "imagem": "https://avatars.githubusercontent.com/u/54159333?v=4",
   "idade": 22,
   "endereco": {
-    "ciadade": "Baracena",
+    "ciadade": "Barbacena",
     "estado": "MG"
   },
   "contatos": {
@@ -51,8 +51,8 @@
       "empresa": "F3 Capital",
       "dataInicial": "11/2021",
       "dataFinal": "ataulmente",
-      "resumo": "Responsável por desenvolver e dar manutenção nas telas do front-end da aplicação utilizando Angular e Typescript. Trabalhei no desenvolvimento e manutenção de APIs Rest utilizando Node, Typescript e MongoDB.",
-      "competencias": ["Angular", "Typescript", "Node", "CSS", "MongoDB"]
+      "resumo": "Responsável por desenvolver e dar manutenção nas telas do front-end da aplicação utilizando Angular e Typescript. Trabalhei no desenvolvimento e manutenção de APIs Rest utilizando Node, Typescript e MongoDB. Desenvolvimento de projetos envolvendo microfrontends",
+      "competencias": ["Angular", "Typescript", "Node", "CSS", "MongoDB", "serverless"]
     }
   ],
   "escolaridade": [
@@ -64,56 +64,117 @@
     }
   ], 
   "projetos": [
+   
     {
-        "nome": "Plataforma de rifas",
-        "resumo": "Responsável pelo desenvolvimento de sites utilizando React, Next, HTML, CSS. Desenvolvi diversos sistemas completos utilizando React e Typescript, atuando em mais de um projeto por vez e utilizando metodologias ágeis, como Scrum e Kanban. Dei manutenção em aplicativos em React Native. Desenvolvi protótipos de design no Figma utilizando boas práticas de UX.",
-        "link": "",
+        "nome": "Currículo no estilo FIFA",
+        "resumo": "Criação de um site/currículo baseado no design do jogo FIFA 21, utilizando React",
+        "link": "https://curriculo-lucas-matos-fifa.vercel.app/",
         "tecnologias": [
           "React",
-          "Next",
           "CSS",
+          "Typescript"
+        ]
+      },
+      
+      {
+        "nome": "Sistemas de lembretes pelo WhatsApp",
+        "resumo": "Sistema capaz de armazenar lembretes criados a partir do próprio WhatsApp, onde é possível consultar os lembretes por data e receber avisos no dia e horário do seu lembrete",
+        "link": "https://github.com/LucasMtss/Lembretes_por_whatsapp",
+        "tecnologias": [
+          "Python",
+          "Twillio",
+          "Flask"
+        ]
+      },
+      {
+        "nome": "Interface de notícias e tweets",
+        "resumo": "Aplicação que lista notícias separadas por categorias e busca tweets reais sobre o assunto noticiado e faz a análise de sentimento dos tweets.",
+        "link": "https://github.com/LucasMtss/noticias-tweets",
+        "tecnologias": [
+          "React",
           "Typescript",
-          "React Native",
-          "Figma"
+          "Node",
+          "API Rest"
+        ]
+      },
+      {
+        "nome": "API de clima e mapas",
+        "resumo": "API que busca a previsão do tempo de uma localização e mostra no mapa",
+        "link": "https://github.com/LucasMtss/Api-de-tempo-e-mapa",
+        "tecnologias": [
+          "Javascript",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "nome": "Lista de tarefas",
+        "resumo": "Lista de tarefas usando Orientação a Objetos com Javascript.",
+        "link": "https://github.com/LucasMtss/To-do-list-POO",
+        "tecnologias": [
+          "Javascript",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "nome": "Calculadora",
+        "resumo": "Calculadora feita usando Orientação a Objetos com Javascript.",
+        "link": "https://github.com/LucasMtss/calculadora-POO",
+        "tecnologias": [
+          "Javascript",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "nome": "Dashboard Tractian",
+        "resumo": "Dashboard para gestão da empresa. Feito para teste de vaga.",
+        "link": "https://github.com/LucasMtss/dashboard-tractian",
+        "tecnologias": [
+          "React",
+          "Typescript",
+          "Styled Components"
+        ]
+      },
+      {
+        "nome": "Site Tractian",
+        "resumo": "Site de apresentação da empresa. Feito para teste de vaga.",
+        "link": "https://github.com/LucasMtss/Site-Tractian",
+        "tecnologias": [
+          "Next",
+          "Typescript",
+          "Styled Components"
+        ]
+      },
+      {
+        "nome": "Compilador para a linguagem de programação LPAS",
+        "resumo": "Compilador feito em C que executa programas escritos em LPAS (Linguagem de Programação de Aritmética Simples).",
+        "link": "https://github.com/LucasMtss/LPAS-em-C-",
+        "tecnologias": [
+          "C"
         ]
       },
       {
         "nome": "Template de currículo personalizável",
-        "resumo": "Responsável pelo desenvolvimento de sites utilizando React, Next, HTML, CSS. Desenvolvi diversos sistemas completos utilizando React e Typescript, atuando em mais de um projeto por vez e utilizando metodologias ágeis, como Scrum e Kanban. Dei manutenção em aplicativos em React Native. Desenvolvi protótipos de design no Figma utilizando boas práticas de UX.",
-        "link": "https://google.com",
+        "resumo": "Um template de currículo personalizável que pode ser transformado em site para ser compartilhado facilmente com qualuer pessoa ou empresa.",
+        "link": "https://template-curriculo-phi.vercel.app",
         "tecnologias": [
           "React",
-          "Next",
           "CSS",
           "Typescript",
-          "React Native",
-          "Figma"
+          "Figma",
+          "Vite"
         ]
       },
       {
-        "nome": "Currículo no estilo FIFA",
-        "resumo": "Responsável pelo desenvolvimento de sites utilizando React, Next, HTML, CSS. Desenvolvi diversos sistemas completos utilizando React e Typescript, atuando em mais de um projeto por vez e utilizando metodologias ágeis, como Scrum e Kanban. Dei manutenção em aplicativos em React Native. Desenvolvi protótipos de design no Figma utilizando boas práticas de UX.",
-        "link": "https://google.com",
+        "nome": "Plataforma de rifas iRifei",
+        "resumo": "Desenvolvimento completo do frontend de uma platafiorma de venda e compartilhamento de rifas.",
+        "link": "https://www.irifei.com.br/",
         "tecnologias": [
           "React",
-          "Next",
           "CSS",
-          "Typescript",
-          "React Native",
-          "Figma"
-        ]
-      },
-      {
-        "nome": "Sistemas de lembretes pelo WhatsApp",
-        "resumo": "Responsável pelo desenvolvimento de sites utilizando React, Next, HTML, CSS. Desenvolvi diversos sistemas completos utilizando React e Typescript, atuando em mais de um projeto por vez e utilizando metodologias ágeis, como Scrum e Kanban. Dei manutenção em aplicativos em React Native. Desenvolvi protótipos de design no Figma utilizando boas práticas de UX.",
-        "link": "https://google.com",
-        "tecnologias": [
-          "React",
-          "Next",
-          "CSS",
-          "Typescript",
-          "React Native",
-          "Figma"
+          "Typescript"
         ]
       }
   ]
