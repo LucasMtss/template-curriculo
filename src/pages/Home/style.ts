@@ -1,5 +1,8 @@
 import { styled } from "styled-components";
-import personalStyle from "../../assets/styleData.json"
+
+interface IStyleProps {
+    styleData: any;
+}
 
 export const Container = styled.div`
     width: 100vw;
@@ -43,13 +46,13 @@ export const MenuInfos = styled.div`
     }
 `
 
-export const ProfileImage = styled.img`
+export const ProfileImage = styled.img<IStyleProps>`
     border-radius: 50%;
     width: 200px;
     height: 200px;
     margin: 0 auto;
     margin-bottom: 33px;
-    border: solid 3px ${personalStyle.ligthMode.secondaryColor};
+    border: solid 3px ${props => props.styleData?.ligthMode?.secondaryColor};
 
     @media (max-width: 600px){
         width: 100px;
@@ -58,26 +61,26 @@ export const ProfileImage = styled.img`
     }
 `
 
-export const ProfileName = styled.h2`
+export const ProfileName = styled.h2<IStyleProps>`
     font-size: 36px;
     width: 100%;
     text-align: center;
-    color: ${personalStyle.ligthMode.secondaryColor};
+    color: ${props => props.styleData?.ligthMode?.secondaryColor};
 
     @media (max-width: 600px){
         font-size: 26px;
     }
 `
 
-export const Occupation = styled.p`
+export const Occupation = styled.p<IStyleProps>`
     font-size: 20px;
     width: 100%;
     text-align: center;
     padding: 10px;
-    background-color: ${personalStyle.ligthMode.secondaryColor};
+    background-color: ${props => props.styleData?.ligthMode?.secondaryColor};
     color: white;
     border: none;
-    color: ${personalStyle.ligthMode.primaryColor};
+    color: ${props => props.styleData?.ligthMode?.primaryColor};
     margin-top: 12px;
 
     @media (max-width: 600px){
@@ -85,26 +88,26 @@ export const Occupation = styled.p`
     }
     `
 
-export const Age = styled.p`
+export const Age = styled.p<IStyleProps>`
     margin-top: 26px;
     width: 100%;
     margin-bottom: 12px;
     font-size: 20px;
     padding: 0 19px;
-    color: ${personalStyle.ligthMode.textColor};
+    color: ${props => props.styleData?.ligthMode?.textColor};
 
     @media (max-width: 600px){
         padding: 0;
     }
     `
 
-export const Bio = styled.p`
+export const Bio = styled.p<IStyleProps>`
     width: 100%;
     margin-bottom: 12px;
     font-size: 14px;
     padding: 0 19px;
     text-align: justify;
-    color: ${personalStyle.ligthMode.textColor};
+    color: ${props => props.styleData?.ligthMode?.textColor};
 
     @media (max-width: 600px){
         padding: 0;
@@ -123,7 +126,7 @@ export const ContainerContacts = styled.div`
     }
 `
 
-export const Contact = styled.div`
+export const Contact = styled.div<IStyleProps>`
     display: flex;
     align-items: center;
     margin-bottom: 16px;
@@ -131,7 +134,7 @@ export const Contact = styled.div`
     height: fit-content;
     
     span {
-        color: ${personalStyle.ligthMode.textColor};
+        color: ${props => props.styleData?.ligthMode?.textColor};
         margin-left: 8px;
         font-size: 15px;
     }
@@ -160,12 +163,73 @@ export const Navbar = styled.div`
     gap: 12px;
 `
 
+export const Title = styled.h1<IStyleProps>`
+    font-weight: bold;
+    font-size: 36px;
+    margin: 56px 0;
+    color: ${props => props.styleData?.ligthMode?.secondaryColor};
+    text-align: center;
+
+    @media (max-width: 600px){
+        font-size: 18px;
+    }
+`
+
+export const SectionTitle = styled.h2<IStyleProps>`
+    width: 100%;
+    padding: 22px 11px;
+    border-left: solid 12px ${props => props.styleData?.ligthMode?.secondaryColor};
+    font-weight: bold;
+    font-size: 24px;
+    color: ${props => props.styleData?.ligthMode.textColor};
+    margin-bottom: 16px;
+
+    @media (max-width: 600px){
+        font-size: 16px;
+        padding: 11px;
+        border-left: solid 6px ${props => props.styleData?.ligthMode?.secondaryColor};
+    }
+`
+
+export const SectionContent = styled.div<IStyleProps>`
+    padding: 12px;
+    border-radius: 6px;
+    border: solid 1px ${props => props.styleData?.ligthMode?.secondaryColor};
+    width: 100%;
+    margin-bottom: 12px;
+    
+    p {
+        font-size: 20px;
+        color: ${props => props.styleData?.ligthMode?.textColor};
+        font-weight: 500;
+
+        @media (max-width: 600px){
+            font-size: 12px;
+        }
+    }
+`
+
+export const ExportButton = styled.button<IStyleProps>`
+    width: 60px;
+    height: 60px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${props => props.styleData?.ligthMode?.secondaryColor};
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+`
+
 interface NavbarItemProps {
     selected: boolean;
 }
 
-export const NavbarItem=styled.span<NavbarItemProps>`
-    border-bottom: solid 3px ${props => props.selected ? personalStyle.ligthMode.secondaryColor : '#D0D6D9'};
+export const NavbarItem=styled.span<NavbarItemProps & IStyleProps>`
+    border-bottom: solid 3px ${props => props.selected ? props.styleData?.ligthMode?.secondaryColor : '#D0D6D9'};
     width: 120px;
     text-align: center;
     font-size: 15px;
@@ -175,65 +239,4 @@ export const NavbarItem=styled.span<NavbarItemProps>`
         font-size: 12px;
         width: 72px;
     }
-`
-
-export const Title = styled.h1`
-    font-weight: bold;
-    font-size: 36px;
-    margin: 56px 0;
-    color: ${personalStyle.ligthMode.secondaryColor};
-    text-align: center;
-
-    @media (max-width: 600px){
-        font-size: 18px;
-    }
-`
-
-export const SectionTitle = styled.h2`
-    width: 100%;
-    padding: 22px 11px;
-    border-left: solid 12px ${personalStyle.ligthMode.secondaryColor};
-    font-weight: bold;
-    font-size: 24px;
-    color: ${personalStyle.ligthMode.textColor};
-    margin-bottom: 16px;
-
-    @media (max-width: 600px){
-        font-size: 16px;
-        padding: 11px;
-        border-left: solid 6px ${personalStyle.ligthMode.secondaryColor};
-    }
-`
-
-export const SectionContent = styled.div`
-    padding: 12px;
-    border-radius: 6px;
-    border: solid 1px ${personalStyle.ligthMode.secondaryColor};
-    width: 100%;
-    margin-bottom: 12px;
-    
-    p {
-        font-size: 20px;
-        color: ${personalStyle.ligthMode.textColor};
-        font-weight: 500;
-
-        @media (max-width: 600px){
-            font-size: 12px;
-        }
-    }
-`
-
-export const ExportButton = styled.button`
-    width: 60px;
-    height: 60px;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: ${personalStyle.ligthMode.secondaryColor};
-    position: fixed;
-    bottom: 26px;
-    right: 26px;
-    border-radius: 50%;
-    cursor: pointer;
 `
