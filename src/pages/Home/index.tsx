@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp, faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope, faFileExport } from '@fortawesome/free-solid-svg-icons'
 
-import { Age, Bio, Contact, Container, ContainerContacts, Content, ExportButton, Menu, MenuInfos, Navbar, NavbarItem, Occupation, ProfileImage, ProfileName, Title } from './style'
+import { Age, Bio, Contact, Container, ContainerContacts, Content, ExportButton, Menu, MenuInfos, Navbar, NavbarItem, Occupation, ProfileImage, ProfileName, Title, UserNotFoundContainer } from './style'
 import ProfessionalExperience from '../../components/ProfessionalExperience';
 import Education from '../../components/Education';
 import Contacts from '../../components/Contacts';
@@ -180,7 +180,11 @@ function Home() {
             }
         </Content>
     </Container>
-  ) : <></>
+  ) : (
+        <UserNotFoundContainer>
+            <h1>Usuário não encontrado :(</h1>
+        </UserNotFoundContainer>
+  )
 }
 
 export default Home

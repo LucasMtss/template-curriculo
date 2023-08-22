@@ -240,3 +240,19 @@ export const NavbarItem=styled.span<NavbarItemProps & IStyleProps>`
         width: 72px;
     }
 `
+
+export const UserNotFoundContainer = styled.div`
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    padding: 1rem;
+
+    @media (max-width: 600px){
+        font-size: 18px;
+    }
+`
