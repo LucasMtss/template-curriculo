@@ -1,23 +1,17 @@
 import './App.css'
 import Home from './pages/Home'
-import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
  
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-`;
+
 
 function App() {
 
   return (
-    <>
-      <GlobalStyle />
-      <Home />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/:slug" element={<Home/>}/>
+      </Routes>
+    </Router>
   )
 }
 

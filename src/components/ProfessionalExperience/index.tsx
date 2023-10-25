@@ -2,6 +2,7 @@ import { SectionContent, SectionTitle } from '../../pages/Home/style';
 import { ContainerTags, Tag } from './style';
 
 interface IProfessionalExperienceProps {
+    styleData: any;
     data: {
         empresa: string;
         dataInicial: string;
@@ -11,16 +12,16 @@ interface IProfessionalExperienceProps {
     }[]
 }
 
-function ProfessionalExperience({data}: IProfessionalExperienceProps) {
+function ProfessionalExperience({data, styleData}: IProfessionalExperienceProps) {
   return (
         data.map(experience => {
             return (
             <>
-                <SectionTitle>{experience.empresa} - {experience.dataInicial} até {experience.dataFinal}</SectionTitle>
-                <SectionContent><p>{experience.resumo}</p></SectionContent>
+                <SectionTitle styleData={styleData}>{experience.empresa} - {experience.dataInicial} até {experience.dataFinal}</SectionTitle>
+                <SectionContent styleData={styleData}><p>{experience.resumo}</p></SectionContent>
                 <ContainerTags>
                     {
-                        experience.competencias.map(competency => <Tag>{competency}</Tag>)
+                        experience.competencias.map(competency => <Tag styleData={styleData}>{competency}</Tag>)
                     }
                 </ContainerTags>
             </>

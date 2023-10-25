@@ -1,15 +1,16 @@
 import { SectionTitle } from '../../pages/Home/style';
 
 interface IEducationProps {
+    styleData: any;
     data: string[];
 }
 
-function Contacts({data}: IEducationProps) {
+function Contacts({data, styleData}: IEducationProps) {
   return (
         data.map(contact => {
             return (
             <>
-                <SectionTitle>{contact}</SectionTitle>
+                <SectionTitle styleData={styleData}>{contact}</SectionTitle>
             </>
             )
         }) 

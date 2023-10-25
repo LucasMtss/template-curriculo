@@ -1,22 +1,22 @@
-import { useState } from 'react'
-import personalStyle from "../../assets/styleData.json"
-import personalData from "../../assets/personalData.json";
+import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp, faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope, faFileExport } from '@fortawesome/free-solid-svg-icons'
 
-
-import { Age, Bio, Contact, Container, ContainerContacts, Content, ExportButton, Menu, MenuInfos, Navbar, NavbarItem, Occupation, ProfileImage, ProfileName, Title } from './style'
+import { Age, Bio, Contact, Container, ContainerContacts, Content, ExportButton, Menu, MenuInfos, Navbar, NavbarItem, Occupation, ProfileImage, ProfileName, Title, UserNotFoundContainer } from './style'
 import ProfessionalExperience from '../../components/ProfessionalExperience';
 import Education from '../../components/Education';
 import Contacts from '../../components/Contacts';
 import Projects from '../../components/Projects';
+import api from '../../services/api';
 
 type TNavbarItem = 'PERSONAL_EXPERIENCE' | 'EDUCATION' | 'PROJECTS' | 'CONTACTS'
 
 function Home() {
-    const [selectedItem, setSelectedItem] = useState<TNavbarItem>('PERSONAL_EXPERIENCE')
-    const [renderAllComponents, setRenderAllComponents] = useState(false)
+    const [selectedItem, setSelectedItem] = useState<TNavbarItem>('PERSONAL_EXPERIENCE');
+    const [renderAllComponents, setRenderAllComponents] = useState(false);
+    const [personalData, setPersonalData] = useState<any>();
+    const [styleData, setStyleData] = useState<any>();
 
     function exportFile(){
         setRenderAllComponents(true)
@@ -44,56 +44,73 @@ function Home() {
     }
 
     function getContacts(){
-        return [ personalData.contatos.whatsApp, personalData.contatos.email]
+        return personalData?.contatos ? [ personalData?.contatos?.whatsApp, personalData?.contatos?.email] : [];
     }
 
-  return (
+    async function getData(){
+        try {
+            const splitedPathname = window.location.pathname.split('/')
+            const slug = splitedPathname[splitedPathname.length -1]
+            const { data } = await api.get(`/curriculum/slug/${slug}`);
+            console.log(data);
+            setStyleData(data.data.styleData);
+            setPersonalData(data.data.personalData);
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    useEffect(() => {
+        getData();
+    }, [])
+
+  return personalData && styleData ? (
     <Container>
         <Menu>
             <MenuInfos>
-                <ProfileImage src={personalData.imagem} />
-                <ProfileName>{personalData.nome}</ProfileName>
-                <Occupation>{personalData.profissao}</Occupation>
-                <Age>{personalData.idade} anos</Age>
-                <Bio>"{personalData.bio}"</Bio>
+                <ProfileImage styleData={styleData} src={personalData.imagem} />
+                <ProfileName styleData={styleData}>{personalData.nome}</ProfileName>
+                <Occupation styleData={styleData}>{personalData.profissao}</Occupation>
+                <Age styleData={styleData}>{personalData.idade} anos</Age>
+                <Bio styleData={styleData}>"{personalData.bio}"</Bio>
             </MenuInfos>
             <ContainerContacts>
                     {
                         personalData.contatos.whatsApp.length ? (
-                            <Contact>
-                                <FontAwesomeIcon icon={faWhatsapp} size={'xl'} color={personalStyle.ligthMode.secondaryColor}/>
+                            <Contact styleData={styleData}>
+                                <FontAwesomeIcon icon={faWhatsapp} size={'xl'} color={styleData.ligthMode.secondaryColor}/>
                                 <span>{personalData.contatos.whatsApp}</span>
                             </Contact>
                         ) : <></>
                     }
                     {
                         personalData.contatos.email.length ? (
-                            <Contact>
-                                <FontAwesomeIcon icon={faEnvelope} size={'xl'} color={personalStyle.ligthMode.secondaryColor}/>
+                            <Contact styleData={styleData}>
+                                <FontAwesomeIcon icon={faEnvelope} size={'xl'} color={styleData.ligthMode.secondaryColor}/>
                                 <span>{personalData.contatos.email}</span>
                             </Contact>
                         ) : <></>
                     }
                     {
                         personalData.contatos.instagram.length ? (
-                            <Contact>
-                                <FontAwesomeIcon icon={faInstagram} size={'xl'} color={personalStyle.ligthMode.secondaryColor}/>
+                            <Contact styleData={styleData}>
+                                <FontAwesomeIcon icon={faInstagram} size={'xl'} color={styleData.ligthMode.secondaryColor}/>
                                 <span>{personalData.contatos.instagram}</span>
                             </Contact>
                         ) : <></>
                     }
                     {
                         personalData.contatos.linkedIn.length ? (
-                            <Contact>
-                                <FontAwesomeIcon icon={faLinkedin} size={'xl'} color={personalStyle.ligthMode.secondaryColor}/>
+                            <Contact styleData={styleData}>
+                                <FontAwesomeIcon icon={faLinkedin} size={'xl'} color={styleData.ligthMode.secondaryColor}/>
                                 <span>{personalData.contatos.linkedIn}</span>
                             </Contact>
                         ) : <></>
                     }
                     {
                         personalData.contatos.github.length ? (
-                            <Contact>
-                                <FontAwesomeIcon icon={faGithub} size={'xl'} color={personalStyle.ligthMode.secondaryColor}/>
+                            <Contact styleData={styleData}>
+                                <FontAwesomeIcon icon={faGithub} size={'xl'} color={styleData.ligthMode.secondaryColor}/>
                                 <span>{personalData.contatos.github}</span>
                             </Contact>
                         ) : <></>
@@ -104,65 +121,69 @@ function Home() {
             {
                 !renderAllComponents && (
                     <Navbar>
-                        <NavbarItem onClick={() => changeNavbar('PERSONAL_EXPERIENCE')} selected={selectedItem === 'PERSONAL_EXPERIENCE'}>Experiência</NavbarItem>
-                        <NavbarItem onClick={() => changeNavbar('EDUCATION')} selected={selectedItem === 'EDUCATION'}>Escolaridade</NavbarItem>
-                        <NavbarItem onClick={() => changeNavbar('PROJECTS')} selected={selectedItem === 'PROJECTS'}>Projetos</NavbarItem>
-                        <NavbarItem onClick={() => changeNavbar('CONTACTS')} selected={selectedItem === 'CONTACTS'}>Contatos</NavbarItem>
+                        <NavbarItem styleData={styleData} onClick={() => changeNavbar('PERSONAL_EXPERIENCE')} selected={selectedItem === 'PERSONAL_EXPERIENCE'}>Experiência</NavbarItem>
+                        <NavbarItem styleData={styleData} onClick={() => changeNavbar('EDUCATION')} selected={selectedItem === 'EDUCATION'}>Escolaridade</NavbarItem>
+                        <NavbarItem styleData={styleData} onClick={() => changeNavbar('PROJECTS')} selected={selectedItem === 'PROJECTS'}>Projetos</NavbarItem>
+                        <NavbarItem styleData={styleData} onClick={() => changeNavbar('CONTACTS')} selected={selectedItem === 'CONTACTS'}>Contatos</NavbarItem>
                     </Navbar>
 
                 )
             }
             {
                 !renderAllComponents && (
-                    <Title>{getTitle()}</Title>
+                    <Title styleData={styleData}>{getTitle()}</Title>
                 )
             }
 
             {
                 renderAllComponents && (
                     <>
-                    <Title>Minhas experiências profissionais</Title>
-                    <ProfessionalExperience data={personalData.experiencias}/>
-                    <Title>Meus estudos e certificados</Title>
-                    <Education data={personalData.escolaridade}/>
-                    <Title>Projetos que já desenvolvi</Title>
-                    <Projects data={personalData.projetos}/>
-                    <Title>Como entrar em contato comigo</Title>
-                    <Contacts data={getContacts()}/>
+                    <Title styleData={styleData}>Minhas experiências profissionais</Title>
+                    <ProfessionalExperience styleData={styleData} data={personalData.experiencias}/>
+                    <Title styleData={styleData}>Meus estudos e certificados</Title>
+                    <Education styleData={styleData} data={personalData.escolaridade}/>
+                    <Title styleData={styleData}>Projetos que já desenvolvi</Title>
+                    <Projects styleData={styleData} data={personalData.projetos}/>
+                    <Title styleData={styleData}>Como entrar em contato comigo</Title>
+                    <Contacts styleData={styleData} data={getContacts()}/>
                     </>
                 )
             }
 
             {
                 selectedItem === 'PERSONAL_EXPERIENCE' && !renderAllComponents && (
-                    <ProfessionalExperience data={personalData.experiencias}/>
+                    <ProfessionalExperience styleData={styleData} data={personalData.experiencias}/>
                 )
             }
             {
                 selectedItem === 'EDUCATION' && !renderAllComponents && (
-                    <Education data={personalData.escolaridade}/>
+                    <Education styleData={styleData} data={personalData.escolaridade}/>
                 )
             }
             {
                 selectedItem === 'PROJECTS' && !renderAllComponents && (
-                    <Projects data={personalData.projetos}/>
+                    <Projects styleData={styleData} data={personalData.projetos}/>
                 )
             }
             {
                 selectedItem === 'CONTACTS' && !renderAllComponents && (
-                    <Contacts data={getContacts()}/>
+                    <Contacts styleData={styleData} data={getContacts()}/>
                 )
             }
 
             {
                 !renderAllComponents && (
-                    <ExportButton onClick={() => exportFile()}>
-                        <FontAwesomeIcon icon={faFileExport} size={'xl'} color={personalStyle.ligthMode.primaryColor}/>
+                    <ExportButton styleData={styleData} onClick={() => exportFile()}>
+                        <FontAwesomeIcon icon={faFileExport} size={'xl'} color={styleData.ligthMode.primaryColor}/>
                     </ExportButton>
                 )
             }
         </Content>
     </Container>
+  ) : (
+        <UserNotFoundContainer>
+            <h1>Usuário não encontrado :(</h1>
+        </UserNotFoundContainer>
   )
 }
 
