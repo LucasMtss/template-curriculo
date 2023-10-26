@@ -1,8 +1,5 @@
 import { styled } from "styled-components"
-
-interface IStyleProps {
-    styleData: any;
-}
+import personalStyle from "../../assets/styleData.json"
 
 export const ContainerTags = styled.div`
     width: 100%;
@@ -11,12 +8,12 @@ export const ContainerTags = styled.div`
     gap: 12px;
     margin-bottom: 16px;
 `
-export const Tag = styled.span<IStyleProps>`
+export const Tag = styled.span`
     padding: 7px 25px;
     font-size: 20px;
     font-weight: bold;
-    background-color: ${props => props.styleData?.ligthMode.secondaryColor};
-    color: ${props => props.styleData?.ligthMode.primaryColor};
+    background-color: ${personalStyle.ligthMode.secondaryColor};
+    color: ${personalStyle.ligthMode.primaryColor};
     border-radius: 18px;
 
     @media (max-width: 600px){
