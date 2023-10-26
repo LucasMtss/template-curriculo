@@ -66,6 +66,18 @@
   "projetos": [
    
     {
+      "nome": "Sistema de pedidos online",
+      "resumo": "Criação de um sistema de pedidos pelo Whatsapp. Esse projeto possibilita que pequenas e médias empresas cortem custos operacionais sem abrir mão da boa experiência do cliente ao realizar o pedido. O sistema não possui mensalidades e nem taxas, cortando custos no final do mês",
+      "link": "https://pedidos-delivery.vercel.app/",
+      "tecnologias": [
+        "React",
+        "CSS",
+        "Typescript",
+        "vite",
+        "Styled Components"
+      ]
+    },
+    {
         "nome": "Currículo no estilo FIFA",
         "resumo": "Criação de um site/currículo baseado no design do jogo FIFA 21, utilizando React",
         "link": "https://curriculo-lucas-matos-fifa.vercel.app/",
